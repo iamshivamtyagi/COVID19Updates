@@ -55,27 +55,7 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_margin="1dp"
-                            android:background="@android:color/background_dark" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="Total Cases" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="1dp"
-                            android:background="@android:color/background_dark" />
+                            android:background="@color/active" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -95,7 +75,27 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_margin="1dp"
-                            android:background="@android:color/background_dark" />
+                            android:background="@color/critical" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:text="Critical" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="15dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@color/recovered" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -115,7 +115,7 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_margin="1dp"
-                            android:background="@android:color/background_dark" />
+                            android:background="@color/death" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -372,7 +372,7 @@
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/tvNewCases"
+                            android:id="@+id/tvTodayCases"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
@@ -406,7 +406,7 @@
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/tvNewDeaths"
+                            android:id="@+id/tvTodayDeaths"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="0"
@@ -450,6 +450,175 @@
 
                     </RelativeLayout>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25sp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Recovered Today"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/tvTodayRecovered"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25sp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Cases Per Million"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/tvCasesPerMillion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25sp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Deaths Per Million"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/tvDeathsPerMillion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25sp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Active Per Million"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/tvActivePerMillion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="25sp"
+                        android:layout_marginBottom="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:text="Recovered Per Million"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/tvRecoveredPerMillion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
 
                 </LinearLayout>
 
