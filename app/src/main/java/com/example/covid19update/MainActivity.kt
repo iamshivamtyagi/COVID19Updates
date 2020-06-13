@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 tvCasesPerMillion.text = jsonObject.getString("casesPerOneMillion")
                 tvDeathsPerMillion.text = jsonObject.getString("deathsPerOneMillion")
                 tvActivePerMillion.text = jsonObject.getString("activePerOneMillion")
-                tvRecoveredPerMillion.text = jsonObject.getString("recoveredPerMillion")
+                tvRecoveredPerMillion.text = jsonObject.getString("recoveredPerOneMillion")
                 tvAffectedCountries.text = jsonObject.getString("affectedCountries")
 
                 // Updating the pie chart
