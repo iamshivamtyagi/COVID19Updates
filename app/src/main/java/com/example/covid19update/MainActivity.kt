@@ -1,5 +1,6 @@
 package com.example.covid19update
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -21,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         fetchData()
+
+        btnTrack.setOnClickListener {
+            startActivity(Intent(applicationContext, CountriesActivity::class.java))
+        }
     }
 
     private fun fetchData() {
