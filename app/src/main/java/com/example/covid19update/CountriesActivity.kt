@@ -22,7 +22,8 @@ class CountriesActivity : AppCompatActivity() {
     var countryList: ArrayList<Model> = ArrayList()
     var adapter = CountryAdapter(countryList)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+    override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_countries)
         setSupportActionBar(toolbar)
@@ -115,13 +116,9 @@ class CountriesActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.search -> {
-
-            }
             // finish activity when home/back icon pressed
             android.R.id.home -> {
                 Toast.makeText(applicationContext, "Back To Home", Toast.LENGTH_SHORT).show()

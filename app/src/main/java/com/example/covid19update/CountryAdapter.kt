@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.country_list_item.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CountryAdapter(private var list: ArrayList<Model>) :
+class CountryAdapter(
+    private var list: ArrayList<Model>
+) :
     RecyclerView.Adapter<CountryAdapter.CountryViewHolder>(), Filterable {
 
     private var listFiltered = ArrayList<Model>()
