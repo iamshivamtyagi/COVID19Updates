@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.country_list_item.view.*
 
-class CountryAdapter(val list: List<Model>) :
+class CountryAdapter( val list: ArrayList<Model>) :
     RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         return CountryViewHolder(
