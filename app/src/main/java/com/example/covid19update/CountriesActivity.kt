@@ -26,6 +26,13 @@ class CountriesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_countries)
         setSupportActionBar(toolbar)
 
+        // to set custom Title to current activity toolbar
+        supportActionBar?.title = "Affected Countries"
+
+        // to set back button in the activity
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         rvList.apply {
             layoutManager = LinearLayoutManager(this@CountriesActivity)
             adapter = this@CountriesActivity.adapter
@@ -94,6 +101,17 @@ class CountriesActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.search -> {
+
+            }
+            // finish activity when home/back icon pressed
+            android.R.id.home -> {
+                Toast.makeText(applicationContext, "Back To Home", Toast.LENGTH_SHORT).show()
+                finish()
+            }
+        }
 
         return super.onOptionsItemSelected(item)
     }
