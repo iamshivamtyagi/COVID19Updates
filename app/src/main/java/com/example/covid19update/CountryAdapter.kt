@@ -12,7 +12,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class CountryAdapter(
-    private var list: ArrayList<Model>
+    private var list: ArrayList<Model>,
+    var clickListner: OnCountryClickListner
 ) :
     RecyclerView.Adapter<CountryAdapter.CountryViewHolder>(), Filterable {
 
@@ -32,7 +33,7 @@ class CountryAdapter(
     override fun getItemCount(): Int = listFiltered.size
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
-        holder.bind(listFiltered[position])
+        holder.bind(listFiltered[position], clickListner)
     }
 
     override fun getFilter(): android.widget.Filter {
@@ -65,13 +66,20 @@ class CountryAdapter(
     }
 
     class CountryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(model: Model) {
+        fun bind(model: Model, action: OnCountryClickListner) {
             with(itemView) {
                 tvCountryName.text = model.country
                 Glide.with(this).load(model.flag).into(ivFlag)
+
+                itemView.setOnClickListener {
+                    action.onItemClick(model, adapterPosition)
+                }
             }
         }
+
     }
+}
 
-
+interface OnCountryClickListner {
+    fun onItemClick(item: Model, position: Int)
 }

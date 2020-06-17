@@ -17,13 +17,12 @@ import org.json.JSONArray
 
 private const val url = "https://corona.lmao.ninja/v2/countries/"
 
-class CountriesActivity : AppCompatActivity() {
+class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
 
-    var countryList: ArrayList<Model> = ArrayList()
-    var adapter = CountryAdapter(countryList)
+    private var countryList: ArrayList<Model> = ArrayList()
+    var adapter = CountryAdapter(countryList, this)
 
-
-    override fun onCreate(savedInstanceState: Bundle?)  {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_countries)
         setSupportActionBar(toolbar)
@@ -76,7 +75,7 @@ class CountriesActivity : AppCompatActivity() {
                     )
                     countryList.add(countryModel)
                 }
-                adapter = CountryAdapter(countryList)
+                adapter = CountryAdapter(countryList, this)
                 rvList.adapter = adapter
                 progressBar.visibility = View.GONE
                 rvList.visibility = View.VISIBLE
@@ -95,7 +94,6 @@ class CountriesActivity : AppCompatActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         requestQueue.add(request)
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
@@ -127,5 +125,9 @@ class CountriesActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onItemClick(item: Model, position: Int) {
+        Toast.makeText(applicationContext, "Clicked", Toast.LENGTH_SHORT).show()
     }
 }
