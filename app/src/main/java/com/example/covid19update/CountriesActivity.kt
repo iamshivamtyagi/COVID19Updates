@@ -51,7 +51,7 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListener {
 
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i)
-                    
+
                     val countryName = jsonObject.getString("country")
                     val cases = jsonObject.getString("cases")
                     val todayCases = jsonObject.getString("todayCases")
@@ -152,8 +152,11 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListener {
 
 }
 
-object getPositionCountryModel {
-    public fun getPositionData(position: Int): Model {
+object GetPositionCountryModel {
+     fun getPositionData(position: Int): Model {
         return countryList[position]
+    }
+    fun getCountryList(): ArrayList<Model> {
+        return countryList
     }
 }

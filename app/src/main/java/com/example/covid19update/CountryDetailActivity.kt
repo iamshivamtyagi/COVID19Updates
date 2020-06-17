@@ -13,6 +13,7 @@ class CountryDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_detail)
+        setSupportActionBar(toolbarDetail)
 
         supportActionBar?.title = "More Details"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -21,23 +22,23 @@ class CountryDetailActivity : AppCompatActivity() {
         val intent = intent
         clickPosition = intent.getIntExtra("position", 0)
 
-        tvCases.text = getPositionCountryModel.getPositionData(clickPosition).cases
-        tvRecovered.text = getPositionCountryModel.getPositionData(clickPosition).recovered
-        tvCritical.text = getPositionCountryModel.getPositionData(clickPosition).critical
-        tvTotalDeaths.text = getPositionCountryModel.getPositionData(clickPosition).deaths
-        tvActive.text = getPositionCountryModel.getPositionData(clickPosition).active
-        tvTodayCases.text = getPositionCountryModel.getPositionData(clickPosition).todayCases
-        tvTodayDeaths.text = getPositionCountryModel.getPositionData(clickPosition).todayDeaths
+        tvCases.text = GetPositionCountryModel.getPositionData(clickPosition).cases
+        tvRecovered.text = GetPositionCountryModel.getPositionData(clickPosition).recovered
+        tvCritical.text = GetPositionCountryModel.getPositionData(clickPosition).critical
+        tvTotalDeaths.text = GetPositionCountryModel.getPositionData(clickPosition).deaths
+        tvActive.text = GetPositionCountryModel.getPositionData(clickPosition).active
+        tvTodayCases.text = GetPositionCountryModel.getPositionData(clickPosition).todayCases
+        tvTodayDeaths.text = GetPositionCountryModel.getPositionData(clickPosition).todayDeaths
         tvTodayRecovered.text =
-            getPositionCountryModel.getPositionData(clickPosition).todayRecovered
+            GetPositionCountryModel.getPositionData(clickPosition).todayRecovered
         tvCasesPerMillion.text =
-            getPositionCountryModel.getPositionData(clickPosition).casesPerMillion
+            GetPositionCountryModel.getPositionData(clickPosition).casesPerMillion
         tvDeathsPerMillion.text =
-            getPositionCountryModel.getPositionData(clickPosition).deathsPerMillion
+            GetPositionCountryModel.getPositionData(clickPosition).deathsPerMillion
         tvActivePerMillion.text =
-            getPositionCountryModel.getPositionData(clickPosition).activePerMillion
+            GetPositionCountryModel.getPositionData(clickPosition).activePerMillion
         tvRecoveredPerMillion.text =
-            getPositionCountryModel.getPositionData(clickPosition).recoveredPerMillion
+            GetPositionCountryModel.getPositionData(clickPosition).recoveredPerMillion
     }
 
 

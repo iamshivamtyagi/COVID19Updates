@@ -1,416 +1,428 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
+    android:orientation="vertical"
     tools:context=".CountryDetailActivity">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="2dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/cases"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvCases"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/cases"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvCases"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/recovered"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvRecovered"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/recovered"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvRecovered"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/critical"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvCritical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/total_deaths"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvTotalDeaths"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/critical"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvCritical"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/active"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvActive"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/new_cases"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvTodayCases"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/total_deaths"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvTotalDeaths"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/new_deaths"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvTodayDeaths"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/recovered_today"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvTodayRecovered"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/active"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvActive"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/cases_per_million"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvCasesPerMillion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/deaths_per_million"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvDeathsPerMillion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/new_cases"
-                android:textSize="24sp" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvTodayCases"
-                android:layout_width="fill_parent"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/active_per_million"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvActivePerMillion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="25sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25sp"
+                android:layout_marginBottom="10dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="@string/recovered_per_million"
+                    android:textSize="24sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/tvRecoveredPerMillion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="textEnd"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
+            </RelativeLayout>
+        </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/new_deaths"
-                android:textSize="24sp" />
+    </ScrollView>
 
-            <TextView
-                android:id="@+id/tvTodayDeaths"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/recovered_today"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvTodayRecovered"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/cases_per_million"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvCasesPerMillion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/deaths_per_million"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvDeathsPerMillion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/active_per_million"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvActivePerMillion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:background="@android:color/darker_gray" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25sp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="@string/recovered_per_million"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/tvRecoveredPerMillion"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/_0"
-                android:textAlignment="textEnd"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-    </LinearLayout>
-
-</ScrollView>
+</LinearLayout>
 

@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(toolbarMain)
+        supportActionBar?.title = " COVID19 Update"
+
         fetchData()
 
         btnTrack.setOnClickListener {

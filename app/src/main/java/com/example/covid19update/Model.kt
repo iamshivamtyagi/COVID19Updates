@@ -10,9 +10,9 @@ data class Model(
     val recovered: String,
     val active: String,
     val critical: String,
-    val casesPerMillion : String,
-    val deathsPerMillion : String,
-    val activePerMillion : String,
-    val recoveredPerMillion : String,
-    val todayRecovered : String
+    val casesPerMillion: String,
+    val deathsPerMillion: String,
+    val activePerMillion: String,
+    val recoveredPerMillion: String,
+    val todayRecovered: String
 )
