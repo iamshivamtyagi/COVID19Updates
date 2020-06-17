@@ -1,5 +1,6 @@
 package com.example.covid19update
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,10 +17,10 @@ import kotlinx.android.synthetic.main.activity_countries.*
 import org.json.JSONArray
 
 private const val url = "https://corona.lmao.ninja/v2/countries/"
+var countryList: ArrayList<Model> = ArrayList()
 
-class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
+class CountriesActivity : AppCompatActivity(), OnCountryClickListener {
 
-    private var countryList: ArrayList<Model> = ArrayList()
     var adapter = CountryAdapter(countryList, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +51,7 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
 
                 for (i in 0 until jsonArray.length()) {
                     val jsonObject = jsonArray.getJSONObject(i)
-
+                    
                     val countryName = jsonObject.getString("country")
                     val cases = jsonObject.getString("cases")
                     val todayCases = jsonObject.getString("todayCases")
@@ -59,6 +60,11 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
                     val recovered = jsonObject.getString("recovered")
                     val active = jsonObject.getString("active")
                     val critical = jsonObject.getString("critical")
+                    val casesPerMillion = jsonObject.getString("casesPerOneMillion")
+                    val deathsPerMillion = jsonObject.getString("deathsPerOneMillion")
+                    val activePerMillion = jsonObject.getString("activePerOneMillion")
+                    val recoveredPerOneMillion = jsonObject.getString("recoveredPerOneMillion")
+                    val todayRecovered = jsonObject.getString("todayRecovered")
 
                     val obj = jsonObject.getJSONObject("countryInfo")
                     val flagUrl = obj.getString("flag")
@@ -68,10 +74,16 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
                         countryName,
                         cases,
                         todayCases,
+                        todayDeaths,
                         deaths,
                         recovered,
                         active,
-                        critical
+                        critical,
+                        casesPerMillion,
+                        deathsPerMillion,
+                        activePerMillion,
+                        recoveredPerOneMillion,
+                        todayRecovered
                     )
                     countryList.add(countryModel)
                 }
@@ -81,6 +93,8 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
                 rvList.visibility = View.VISIBLE
             } catch (e: Exception) {
                 e.printStackTrace()
+                Toast.makeText(applicationContext, "Something went wrong !!!", Toast.LENGTH_SHORT)
+                    .show()
                 progressBar.visibility = View.GONE
                 rvList.visibility = View.VISIBLE
             }
@@ -128,6 +142,18 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListner {
     }
 
     override fun onItemClick(item: Model, position: Int) {
-        Toast.makeText(applicationContext, "Clicked", Toast.LENGTH_SHORT).show()
+        startActivity(
+            Intent(
+                applicationContext,
+                CountryDetailActivity::class.java
+            ).putExtra("position", position)
+        )
+    }
+
+}
+
+object getPositionCountryModel {
+    public fun getPositionData(position: Int): Model {
+        return countryList[position]
     }
 }
