@@ -129,7 +129,6 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         when (item.itemId) {
             // finish activity when home/back icon pressed
             android.R.id.home -> {
@@ -151,7 +150,7 @@ class CountriesActivity : AppCompatActivity(), OnCountryClickListener {
     }
 
 }
-
+ 
 object GetPositionCountryModel {
      fun getPositionData(position: Int): Model {
         return countryList[position]
