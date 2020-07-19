@@ -15,5 +15,4 @@ data class Model(
     val activePerMillion: String,
     val recoveredPerMillion: String,
     val todayRecovered: String
-
 )
