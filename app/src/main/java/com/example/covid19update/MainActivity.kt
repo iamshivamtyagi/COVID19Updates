@@ -92,8 +92,6 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-
-
         },
             Response.ErrorListener {
                 Toast.makeText(this, "Something went wrong !!!", Toast.LENGTH_SHORT)
